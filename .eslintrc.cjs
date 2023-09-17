@@ -16,5 +16,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
     'no-constant-condition': 'off',
+    'react/forbid-foreign-prop-types': 'off',
   },
 };

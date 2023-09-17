@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Row from '../ui/Row';
-import Heading from '../ui/Heading';
+import Row from '../ui/Row.jsx';
+import Heading from '../ui/Heading.jsx';
 import CabinTable from '../features/cabins/CabinTable.jsx';
 import Button from '../ui/Button.jsx';
 import CreateCabinForm from '../features/cabins/CreateCabinForm.jsx';

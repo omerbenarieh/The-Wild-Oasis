@@ -1,12 +1,16 @@
-import { createPortal } from 'react-dom';
-
-import styled from 'styled-components';
-import { HiXMark } from 'react-icons/hi2';
-
-import { createContext } from 'react';
+// HOOKS
 import { useState } from 'react';
 import { useContext } from 'react';
+import { useExitWindow } from '../hooks/useExitWindow.js';
+
+// CREATE STUFF
+import { createPortal } from 'react-dom';
+import { createContext } from 'react';
 import { cloneElement } from 'react';
+
+// STYLES
+import styled from 'styled-components';
+import { HiXMark } from 'react-icons/hi2';
 
 const StyledModal = styled.div`
   position: fixed;
@@ -85,12 +89,13 @@ function Open({ children, opens: opensWindowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
+  const ref = useExitWindow(close);
 
   if (name !== openName) return null;
 
   return createPortal(
     <Overlay>
-      <StyledModal>
+      <StyledModal ref={ref}>
         <Button onClick={close}>
           <HiXMark />
         </Button>

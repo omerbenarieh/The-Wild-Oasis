@@ -1,7 +1,7 @@
 // HOOKS
 import { useState } from 'react';
 import { useContext } from 'react';
-import { useExitWindow } from '../hooks/useExitWindow.js';
+import { useOutsideClick } from '../hooks/useOutsideClick.js';
 
 // CREATE STUFF
 import { createPortal } from 'react-dom';
@@ -89,7 +89,7 @@ function Open({ children, opens: opensWindowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
-  const ref = useExitWindow(close);
+  const ref = useOutsideClick(close);
 
   if (name !== openName) return null;
 

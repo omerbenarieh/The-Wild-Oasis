@@ -6,7 +6,9 @@ import { StyleSheetManager } from 'styled-components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StyleSheetManager shouldForwardProp={prop => prop !== 'variation'}>
+    <StyleSheetManager
+      shouldForwardProp={prop => prop !== 'variation' && prop !== 'isPaid'}
+    >
       <App />
     </StyleSheetManager>
   </React.StrictMode>

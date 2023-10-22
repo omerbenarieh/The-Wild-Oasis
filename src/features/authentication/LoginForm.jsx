@@ -8,8 +8,8 @@ import FormRowVertical from '../../ui/FormRowVertical';
 import SpinnerMini from '../../ui/SpinnerMini.jsx';
 
 function LoginForm() {
-  const [email, setEmail] = useState('omer@gmail.com');
-  const [password, setPassword] = useState('1234');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const { login, isLoading } = useLogin();
   function handleSubmit(e) {
